@@ -1,0 +1,20 @@
+<project name="p2 features">
+
+	<property name="eclipse_4.10_platform"
+	          location="C:/cec/ENGINE_LIB_DIR/repo/download.eclipse.org/eclipse/updates/4.10/R-4.10-201812060815_noPack200" />
+
+	<property name="eclipse_2018-12_simultaneous-release"
+	          location="C:/cec/ENGINE_LIB_DIR/repo/download.eclipse.org/releases/2018-12/201812191000_noPack200" />
+
+	<property name="repo2process"
+	          location="${eclipse_2018-12_simultaneous-release}" />
+
+	<target name="remove_packed"
+	        description="remove packed bundle archives from repo">
+		<p2.remove.iu>
+			<repository location="file:${repo2process}" />
+			<iu query="" artifacts="(format=packed)" />
+		</p2.remove.iu>
+	</target>
+
+</project>
